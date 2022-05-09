@@ -60,6 +60,7 @@ class ContaEmArray extends Component {
                 else { return 'Número ou tipo inválido!' }
             })
         ]
+
         this.setState({ resultado: resultado.join(), resposta: true })
     }
     renderButtonClass = () => {
