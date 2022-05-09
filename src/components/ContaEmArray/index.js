@@ -65,17 +65,18 @@ class ContaEmArray extends Component {
     }
     renderButtonClass = () => {
 
+        const { array_1_num_1, array_1_num_2, array_1_conta, array_2_num_1, array_2_num_2, array_2_conta } = this.state
         let isDisabled = false;
 
         if (
-            this.state.array_1_num_1 === '' ||
-            this.state.array_1_num_2 === '' ||
-            this.state.array_1_num_2 === 0 ||
-            this.state.array_1_conta === '' ||
-            this.state.array_2_num_1 === '' ||
-            this.state.array_2_num_2 === '' ||
-            this.state.array_2_num_2 === -0 ||
-            this.state.array_2_conta === ''
+            array_1_num_1 === '' ||
+            array_1_num_2 === '' ||
+            ((array_1_num_2 === 0 || array_1_num_2 === -0) && array_1_conta === 'divisao') ||
+            array_1_conta === '' ||
+            array_2_num_1 === '' ||
+            array_2_num_2 === '' ||
+            ((array_2_num_2 === 0 || array_2_num_2 === -0) && array_2_conta === 'divisao') ||
+            array_2_conta === ''
         ) isDisabled = true
 
         return isDisabled;
